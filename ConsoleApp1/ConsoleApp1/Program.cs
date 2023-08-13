@@ -14,19 +14,17 @@ class Program
             string name;
             string description;
             string url;
-            Console.WriteLine("Enter Issue name:");
+            Console.WriteLine("Enter Issue name:\n");
             name = Console.ReadLine();
-            Console.WriteLine("Enter Issue description:");
+            Console.WriteLine("Enter Issue description:\n");
             description = Console.ReadLine();
-            Console.WriteLine("Enter Issue URL :");
+            Console.WriteLine("Enter Issue URL:\n");
             url = Console.ReadLine();
             Issue issue = new(name, description, url);
-
-
         }
         else if(input=="s"||input=="S")
         {
-            Console.WriteLine("Enter Issue name :");
+            Console.WriteLine("Enter Issue name :\n");
             string name = Console.ReadLine();
         }
         else
