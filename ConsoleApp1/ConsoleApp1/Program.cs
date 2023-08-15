@@ -1,15 +1,17 @@
 ﻿using ConsoleApp1;
 using ConsoleApp1.model;
 using Microsoft.Data.SqlClient;
+using System.Text;
 
 class Program
 {
     static void Main(string[] args)
     {
-       
+        Console.OutputEncoding = Encoding.UTF8;
 
-    Again:
-        Console.WriteLine("Enter A to add new issue or S to search\n");
+
+    askAgain:
+        Console.WriteLine("Enter A to add new issue , S to search or E to exit\n");
         string input = Console.ReadLine();
         MyappContext myappContext=new MyappContext();
         
@@ -22,7 +24,7 @@ class Program
             Issue issue = new Issue();
 
 
-            Console.WriteLine("Enter Issue name:\n");
+            Console.WriteLine("\nEnter Issue name:\n");
             issue.name = Console.ReadLine();
 
             Console.WriteLine("Enter Issue description:\n");
@@ -33,18 +35,16 @@ class Program
 
            
 
+            myappContext.Issues.Add(issue);
+            myappContext.SaveChanges();
+
+
             
 
 
 
-            myappContext.Issues.Add(issue);
-            myappContext.SaveChanges();
-
-           
 
 
-
-           
 
         }
         else if(input=="s"||input=="S")
@@ -70,7 +70,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("Enter Correct name ,pls\n");
+                Console.WriteLine("\nEnter Correct name, pls🥺\n");
                 goto searchagain;
             }
 
@@ -80,9 +80,13 @@ class Program
             
 
         }
+        else if(input=="e"||input=="E")
+        {
+            return;
+        }
         else
         {
-            goto Again;
+            goto askAgain;
         }
 
     }
