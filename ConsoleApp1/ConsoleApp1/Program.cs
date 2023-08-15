@@ -1,7 +1,6 @@
 ﻿using ConsoleApp1;
 using ConsoleApp1.model;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 class Program
 {
@@ -11,7 +10,7 @@ class Program
         
 
 
-    askAgain:
+     askAgain:
 
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Enter A to add new issue , S to search or E to exit\n");
@@ -68,7 +67,7 @@ class Program
         else if(input=="s"||input=="S")
         {
 
-        searchagain:
+         searchagain:
 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("\nEnter Issue name :\n");
