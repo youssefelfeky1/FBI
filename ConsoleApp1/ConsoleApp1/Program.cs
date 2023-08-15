@@ -55,7 +55,7 @@ class Program
             searchagain:
 
 
-            Console.WriteLine("Enter Issue name :\n");
+            Console.WriteLine("\nEnter Issue name :\n");
             string name = Console.ReadLine();
 
 
@@ -74,7 +74,7 @@ class Program
             }
             else
             {
-                Console.WriteLine("\nEnter Correct name, pls🥺\n");
+                Console.WriteLine("\nEnter Correct name, pls🥺 !\n");
                 goto searchagain;
             }
 
