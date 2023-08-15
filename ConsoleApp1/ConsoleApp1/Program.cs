@@ -11,6 +11,8 @@ class Program
 
 
     askAgain:
+
+
         Console.WriteLine("Enter A to add new issue , S to search or E to exit\n");
         string input = Console.ReadLine();
         MyappContext myappContext=new MyappContext();
@@ -51,6 +53,8 @@ class Program
         {
 
             searchagain:
+
+
             Console.WriteLine("Enter Issue name :\n");
             string name = Console.ReadLine();
 
