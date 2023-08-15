@@ -1,6 +1,5 @@
 ﻿using ConsoleApp1;
 using ConsoleApp1.model;
-using Microsoft.Data.SqlClient;
 using System.Text;
 
 class Program
@@ -15,10 +14,11 @@ class Program
 
         Console.WriteLine("Enter A to add new issue , S to search or E to exit\n");
         string input = Console.ReadLine();
+
         MyappContext myappContext=new MyappContext();
         
 
-
+        //Add new issue
         if (input == "A" || input=="a")
         {
            
@@ -29,16 +29,19 @@ class Program
             Console.WriteLine("\nEnter Issue name:\n");
             issue.name = Console.ReadLine();
 
-            Console.WriteLine("Enter Issue description:\n");
+            Console.WriteLine("\nEnter Issue description:\n");
             issue.description = Console.ReadLine();
 
-            Console.WriteLine("Enter Issue URL:\n");
+            Console.WriteLine("\nEnter Issue URL:\n");
             issue.url = Console.ReadLine();
 
            
 
             myappContext.Issues.Add(issue);
             myappContext.SaveChanges();
+
+            Console.WriteLine("\nIssue added successfully\n");
+            goto askAgain;
 
 
             
@@ -49,10 +52,11 @@ class Program
 
 
         }
+        //Search for issue
         else if(input=="s"||input=="S")
         {
 
-            searchagain:
+        searchagain:
 
 
             Console.WriteLine("\nEnter Issue name :\n");
