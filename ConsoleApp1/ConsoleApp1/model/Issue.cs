@@ -14,7 +14,6 @@ namespace ConsoleApp1.model
 
         [Key]
         public int Id { get; set; }
-        [Required]
         public  string name { get; set; }
         public string description { get; set; }
         public string url { get; set; }
