@@ -1,5 +1,6 @@
-﻿using ConsoleApp1;
-using ConsoleApp1.model;
+﻿using ConsoleApp1.Business;
+using ConsoleApp1.Business.model;
+using ConsoleApp1.DataAcess;
 using System.Text;
 
 class Program
@@ -7,10 +8,11 @@ class Program
     static void Main(string[] args)
     {
         Console.OutputEncoding = Encoding.UTF8;
-        
+        IssueBusiness issueBusiness = new IssueBusiness();
 
 
-     askAgain:
+
+    askAgain:
 
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("Enter A to add new issue , S to search or E to exit\n");
@@ -18,39 +20,37 @@ class Program
         string input = Console.ReadLine();
 
 
-        MyappContext myappContext=new MyappContext();
         
+
 
         //Add new issue
         if (input == "A" || input=="a")
         {
-           
-
-            Issue issue = new Issue();
+          
 
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("\nEnter Issue name:\n");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            issue.name = Console.ReadLine();
+            string name = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("\nEnter Issue description:\n");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            issue.description = Console.ReadLine();
+            string description = Console.ReadLine();
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.WriteLine("\nEnter Issue URL:\n");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            issue.url = Console.ReadLine();
+            string url = Console.ReadLine();
             
 
 
 
-            myappContext.Issues.Add(issue);
-            myappContext.SaveChanges();
+         
 
             Console.ForegroundColor = ConsoleColor.Red;
+            issueBusiness.addIssue(name,description,url);
             Console.WriteLine("\nIssue added successfully\n");
             goto askAgain;
 
@@ -78,7 +78,7 @@ class Program
 
 
 
-            var retIssue = myappContext.Issues.Where(x => x.name == name);
+            var retIssue = issueBusiness.searchIssue(name);
             
             if(retIssue.Count()!=0)
             {

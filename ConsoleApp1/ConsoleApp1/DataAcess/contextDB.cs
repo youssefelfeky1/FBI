@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.model;
+﻿using ConsoleApp1.Business.model;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace ConsoleApp1.DataAcess
 {
     class MyappContext : DbContext
     {
