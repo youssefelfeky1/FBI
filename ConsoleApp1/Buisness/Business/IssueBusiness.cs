@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.Business
 {
-    class IssueBusiness
+   public class IssueBusiness
     {
         private MyappContext myappContext=new MyappContext();
         public void addIssue(string name ,string desc,string url)

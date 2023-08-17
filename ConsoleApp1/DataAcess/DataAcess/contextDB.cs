@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1.DataAcess
 {
-    class MyappContext : DbContext
+    public class MyappContext : DbContext
     {
         public DbSet<Issue> Issues { get; set; }
 

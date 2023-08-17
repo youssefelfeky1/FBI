@@ -45,13 +45,10 @@ class Program
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             string url = Console.ReadLine();
             
-
-
-
-         
-
             Console.ForegroundColor = ConsoleColor.Red;
+
             issueBusiness.addIssue(name,description,url);
+
             Console.WriteLine("\nIssue added successfully\n");
             goto askAgain;
 
