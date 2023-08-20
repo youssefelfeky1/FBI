@@ -21,10 +21,10 @@ namespace ConsoleApp1.Business
             myappContext.SaveChanges();
         }
 
-        public IQueryable<Issue> searchIssue(string name)
+        public List<Issue> searchIssue(string name)
         {
             var retIssue = myappContext.Issues.Where(x => x.name == name);
-            return retIssue;
+            return retIssue.ToList<Issue>();
             
             
 
