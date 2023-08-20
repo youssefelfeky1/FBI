@@ -46,8 +46,13 @@ class Program
             string url = Console.ReadLine();
             
             Console.ForegroundColor = ConsoleColor.Red;
+            Issue issue = new Issue();
 
-            issueBusiness.addIssue(name,description,url);
+            issue.name = name;
+            issue.description = description;
+            issue.url = url;
+
+            issueBusiness.addIssue(issue);
 
             Console.WriteLine("\nIssue added successfully\n");
             goto askAgain;

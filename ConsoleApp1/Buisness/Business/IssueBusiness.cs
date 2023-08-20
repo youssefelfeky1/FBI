@@ -11,12 +11,9 @@ namespace ConsoleApp1.Business
    public class IssueBusiness
     {
         private MyappContext myappContext=new MyappContext();
-        public void addIssue(string name ,string desc,string url)
+        public void addIssue(Issue issue)
         {
-            Issue issue = new Issue();
-            issue.name = name;
-            issue.description = desc;
-            issue.url = url;
+            
             myappContext.Issues.Add(issue);
             myappContext.SaveChanges();
         }

@@ -26,7 +26,7 @@ namespace ApiProject.Controllers
         [HttpPost("addIssue")]
         public void Post(Issue issue)
         {
-             issueBusiness.addIssue(issue.name,issue.description,issue.url);
+             issueBusiness.addIssue(issue);
             
         }
     }
